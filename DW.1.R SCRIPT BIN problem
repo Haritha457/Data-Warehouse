@@ -1,0 +1,17 @@
+sales_prices <- c(5,10,11,13,15,35,50,55,72,92,204,215)
+cutoff <- quantile(sales_prices, probs = c(1/3, 2/3))
+bin1 <- sales_prices[sales_prices <= cutoff[1]]
+bin2 <- sales_prices[sales_prices > cutoff[1] & sales_prices <= cutoff[2]]
+bin3 <- sales_prices[sales_prices > cutoff[2]]
+range()<- max(sales_prices) - min(sales_prices)
+width <- range/3
+bin1 <- sales_prices[sales_prices <= min(sales_prices) + width]
+bin2 <- sales_prices[sales_prices > min(sales_prices) + width & sales_prices <= min(sales_prices) + 2*width]
+bin3 <- sales_prices[sales_prices > min(sales_prices) + 2*width]
+library(cluster)
+km <- kmeans(sales_prices, 3)
+bin1 <- sales_prices[km$cluster == 1]
+bin2 <- sales_prices[km$cluster == 2]
+bin3 <- sales_prices[km$cluster == 3]
+
+
