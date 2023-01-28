@@ -1,0 +1,31 @@
+# Import necessary libraries
+library(tidyverse)
+library(broom)
+
+# Load the diabetes dataset
+diabetes <- read.csv("diabetes.csv")
+
+# Linear regression
+# Modeling the relationship between age and diabetes
+model_lm <- lm(diabetes$diabetes ~ diabetes$age)
+summary(model_lm)
+
+# Multiple regression
+# Modeling the relationship between age, bmi, blood pressure, and glucose levels and diabetes
+model_lm2 <- lm(diabetes$diabetes ~ diabetes$age + diabetes$bmi + diabetes$blood_pressure + diabetes$glucose)
+summary(model_lm2)
+
+# Use tidypredict to extract the coefficients and p-values
+tidy(model_lm)
+tidy(model_lm2)
+
+# Create a scatter plot of age and diabetes to visualize the relationship
+ggplot(data = diabetes, aes(x = age, y = diabetes)) + 
+  geom_point() + 
+  geom_smooth(method = "lm")
+
+# Create a scatter plot of age and diabetes to visualize the relationship
+ggplot(data = diabetes, aes(x = age, y = diabetes)) + 
+  geom_point() + 
+  geom_smooth(method = "lm") +
+  geom_point(aes(x = bmi, y = blood_pressure, color = glucose))
