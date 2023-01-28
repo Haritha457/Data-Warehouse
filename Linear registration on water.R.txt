@@ -1,0 +1,13 @@
+# install and load the dataset
+install.packages("datasets")
+library(datasets)
+data("water")
+
+# plot the relationship between mortality and hardness
+plot(water$hardness, water$mortality)
+
+# fit a linear regression model to the data
+model <- lm(mortality ~ hardness, data = water)
+
+# predict the mortality for a hardness of 88
+predict(model, data.frame(hardness = 88))
