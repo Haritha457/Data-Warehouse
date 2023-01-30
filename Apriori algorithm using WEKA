@@ -1,17 +1,65 @@
-TID	Items
-1	 Bread, Peanuts, Milk
-2	 Jam, Fruit
-3	 Bread, Jam, Soda
-4	 Chips, Milk, Fruit
-5	 Steak, Jam, Soda
-6	 Chips, Bread
-7	 Jam, Soda, Peanuts
-8	 Milk, Fruit
-9	 Jam, Soda, Chips
-10	Milk, Bread
-11	Fruit, Soda, Chips
-12	Milk
-13	Fruit, Soda, Peanuts
-14	Milk
-15	Fruit, Peanuts
-16	Cheese, Yogurt
+@relation food
+
+@attribute tid {t1,t2,t3,t4,t5}
+@attribute items {bread,peanuts,milk,fruit,jam,soda,chips,cheese,steak,yogurt}
+
+@data
+
+t1,bread
+t1,peanuts
+t1,milk
+t1,fruit
+t1,jam
+t2,bread
+t2,jam
+t2,soda
+t2,chips
+t2,milk
+t2,fruit
+t3,steak
+t3,jam
+t3,soda
+t3,chips
+t3,bread
+t4,jam
+t4,soda
+t4,peanuts
+t4,milk
+t4,fruit
+t5,jam
+t5,soda
+t5,chips
+t5,milk
+t5,bread@relation food
+
+@attribute tid {t1,t2,t3,t4,t5}
+@attribute items {bread,peanuts,milk,fruit,jam,soda,chips,cheese,steak,yogurt}
+
+@data
+
+t1,bread
+t1,peanuts
+t1,milk
+t1,fruit
+t1,jam
+t2,bread
+t2,jam
+t2,soda
+t2,chips
+t2,milk
+t2,fruit
+t3,steak
+t3,jam
+t3,soda
+t3,chips
+t3,bread
+t4,jam
+t4,soda
+t4,peanuts
+t4,milk
+t4,fruit
+t5,jam
+t5,soda
+t5,chips
+t5,milk
+t5,bread
